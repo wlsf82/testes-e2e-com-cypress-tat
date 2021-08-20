@@ -3,7 +3,7 @@ it('successfully logs in', () => {
 
   cy.visit('/login')
   cy.get('#email').type(Cypress.env('USER_EMAIL'))
-  cy.get('#password').type(Cypress.env('USER_PASSWORD'))
+  cy.get('#password').type(Cypress.env('USER_PASSWORD'), { log: false })
   cy.contains('button', 'Login').click()
 
   cy.wait('@getNotes')
