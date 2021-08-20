@@ -13,6 +13,7 @@
   "license": "MIT",
   "devDependencies": {
     "cypress": "^8.2.0",
+    "cypress-file-upload": "^5.0.8",
     "cypress-mailosaur": "^2.3.3",
     "eslint": "^7.32.0",
     "eslint-plugin-cypress": "^2.11.3",

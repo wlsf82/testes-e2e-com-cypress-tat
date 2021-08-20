@@ -1,6 +1,7 @@
 it('CRUDs a note', () => {
   const faker = require('faker')
   const noteDescription = faker.lorem.words(4)
+  let attachFile = false
 
   cy.intercept('GET', '**/notes').as('getNotes')
   cy.intercept('GET', '**/notes/**').as('getNote')
@@ -8,6 +9,11 @@ it('CRUDs a note', () => {
 
   cy.visit('/notes/new')
   cy.get('#content').type(noteDescription)
+
+  if (attachFile) {
+    cy.get('#file').attachFile('example.json')
+  }
+
   cy.contains('button', 'Create').click()
 
   cy.wait('@getNotes')
@@ -21,6 +27,13 @@ it('CRUDs a note', () => {
   cy.get('#content')
     .clear()
     .type(updatedNoteDescription)
+
+  attachFile = true
+
+  if (attachFile) {
+    cy.get('#file').attachFile('example.json')
+  }
+
   cy.contains('button', 'Save').click()
   cy.wait('@getNotes')
 
