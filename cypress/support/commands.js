@@ -21,13 +21,13 @@ Cypress.Commands.add('login', (
   }
 
   if (cacheSession) {
-    cy.session([username, password], login)
+    cy.session(username, login)
   } else {
     login()
   }
 })
 
-const attachFileHandler = () => cy.get('#file').attachFile('example.json')
+const attachFileHandler = () => cy.get('#file').selectFile('cypress/fixtures/example.json')
 
 Cypress.Commands.add('createNote', (note, attachFile = false) => {
   cy.visit('/notes/new')
