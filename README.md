@@ -41,6 +41,10 @@ Run `npm run cy:open` to open the Cypress Test Runner to run tests in interactiv
 
 Run `npm run cy:open:tablet` to open the Cypress Test Runner to run tests in interactive mode using a tablet viewport.
 
+## Support this project
+
+If you want to support this project, leave a ⭐.
+
 ___
 
 Made with ❤️ by [Walmyr](https://walmyr.dev).
